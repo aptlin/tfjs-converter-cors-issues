@@ -1,7 +1,7 @@
-import * as tf from '@tensorflow/tfjs';
+import * as tfconv from '@tensorflow/tfjs-converter';
 const initializeModels = async () => {
   const loadingStart = performance.now();
-  const model = await tf.loadGraphModel(
+  const model = await tfconv.loadGraphModel(
       'https://storage.googleapis.com/tfjs-models/savedmodel/posenet/mobilenet/quant2/100/model-stride8.json');
   status(`Loaded ${model} in ${(performance.now() - loadingStart) / 1000}s`);
 };
